@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>លំហាត់រូបវិទ្យា៖ ក្រាបចម្ងាយចរ និង ពេល</title>
+    <!-- បញ្ចូលបណ្ណាល័យ Chart.js សម្រាប់គូសក្រាប -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Kantumruy Pro', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .exercise-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .exercise-title {
+            color: #2980b9;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .graph-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .solution-box {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+        .question {
+            font-weight: 600;
+            color: #c0392b;
+        }
+        canvas {
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>លំហាត់រូបវិទ្យា៖ ល្បឿនមធ្យម និងវ៉ិចទ័រល្បឿនខណៈ</h1>
+
+    <!-- លំហាត់ទី១ -->
+    <div class="exercise-card">
+        <h2 class="exercise-title">លំហាត់ទី១៖ ចលនាត្រង់ស្មើ និងការឈប់សម្រាក</h2>
+        <p><strong>បម្រាប់៖</strong> ក្រាបខាងក្រោមជាក្រាបចម្ងាយចរ-ពេល នៃរថយន្តមួយដោយមានចំណុច A(0, 0), B(4, 20), និង C(6, 20)។</p>
+        
+        <div class="graph-container">
+            <canvas id="chart1"></canvas>
+        </div>
+
+        <p class="question">សំណួរ៖</p>
+        <p>១. ចូរគណនាល្បឿនមធ្យមរបស់រថយន្ត ក្នុងចន្លោះពេលពី t = 0s ទៅ t = 6s។<br>
+           ២. ចូរគណនាតម្លៃល្បឿនខណៈ និងកំណត់វ៉ិចទ័រល្បឿនខណៈ នៅពេល t = 2s និងនៅពេល t = 5s។</p>
+        
+        <div class="solution-box">
+            <strong>ដំណោះស្រាយ៖</strong><br>
+            <strong>១. ល្បឿនមធ្យម ពី 0s ទៅ 6s៖</strong><br>
+            V<sub>m</sub> = &Delta;x / &Delta;t = (20 - 0) / (6 - 0) = 20 / 6 &approx; <strong>3.33 m/s</strong><br><br>
+            
+            <strong>២. វ៉ិចទ័រល្បឿនខណៈ៖</strong><br>
+            - <strong>នៅ t = 2s (លើបន្ទាត់ AB):</strong> V<sub>1</sub> = (20 - 0) / (4 - 0) = <strong>5 m/s</strong> (ទិសដៅស្របនឹងចលនា)<br>
+            - <strong>នៅ t = 5s (លើបន្ទាត់ BC):</strong> V<sub>2</sub> = (20 - 20) / (6 - 4) = <strong>0 m/s</strong> (រថយន្តឈប់ស្ងៀម)
+        </div>
+    </div>
+
+    <!-- លំហាត់ទី២ -->
+    <div class="exercise-card">
+        <h2 class="exercise-title">លំហាត់ទី២៖ ចលនាមានទិសដៅបញ្រ្ចាសគ្នា</h2>
+        <p><strong>បម្រាប់៖</strong> សិស្សម្នាក់ជិះកង់មានក្រាបទីតាំង-ពេល កំណត់ដោយចំណុច P(0, 10), Q(2, 40), និង R(5, 10)។</p>
+        
+        <div class="graph-container">
+            <canvas id="chart2"></canvas>
+        </div>
+
+        <p class="question">សំណួរ៖</p>
+        <p>១. ចូរគណនាល្បឿនមធ្យម (Average Speed) និងវ៉ិចទ័រល្បឿនមធ្យម (Average Velocity) ក្នុងចន្លោះពេលពី t = 0s ទៅ t = 5s។<br>
+           ២. ចូរគណនាតម្លៃវ៉ិចទ័រល្បឿនខណៈ នៅពេល t = 1s និង t = 4s។</p>
+        
+        <div class="solution-box">
+            <strong>ដំណោះស្រាយ៖</strong><br>
+            <strong>១. ល្បឿនមធ្យម និងវ៉ិចទ័រល្បឿនមធ្យម (0s &rarr; 5s):</strong><br>
+            - <strong>ល្បឿនមធ្យម (គិតលើចម្ងាយ d):</strong> ជិះទៅមុខបាន 30m + ត្រលប់ក្រោយ 30m = 60m។ V = 60 / 5 = <strong>12 m/s</strong><br>
+            - <strong>វ៉ិចទ័រល្បឿនមធ្យម (គិតលើបម្លាស់ទី &Delta;x):</strong> &Delta;x = 10m - 10m = 0m។ V<sub>avg</sub> = 0 / 5 = <strong>0 m/s</strong><br><br>
+            
+            <strong>២. វ៉ិចទ័រល្បឿនខណៈ៖</strong><br>
+            - <strong>នៅ t = 1s (លើ PQ):</strong> V<sub>1</sub> = (40 - 10) / (2 - 0) = <strong>15 m/s</strong> (ទិសដៅទៅមុខ)<br>
+            - <strong>នៅ t = 4s (លើ QR):</strong> V<sub>2</sub> = (10 - 40) / (5 - 2) = <strong>-10 m/s</strong> (ទិសដៅផ្ទុយ ឬជិះត្រលប់ក្រោយ)
+        </div>
+    </div>
+
+    <!-- លំហាត់ទី៣ -->
+    <div class="exercise-card">
+        <h2 class="exercise-title">លំហាត់ទី៣៖ ក្រាបរាងខ្សែកោង និងបន្ទាត់ប៉ះ</h2>
+        <p><strong>បម្រាប់៖</strong> វត្ថុមួយមានចលនាស្ទុះស្មើ (ក្រាបរាងប៉ារ៉ាបូល)។ បន្ទាត់ប៉ះក្រាបត្រង់ t = 3s កាត់តាមចំណុច M(1, -6) និង N(3, 18)។</p>
+        
+        <div class="graph-container">
+            <canvas id="chart3"></canvas>
+        </div>
+
+        <p class="question">សំណួរ៖</p>
+        <p>១. តើល្បឿនមធ្យមរបស់វត្ថុពី t = 0s ទៅ t = 4s មានតម្លៃប៉ុន្មាន?<br>
+           ២. ដោយប្រើប្រាស់បន្ទាត់ប៉ះក្រាប ចូរគណនាតម្លៃនៃវ៉ិចទ័រល្បឿនខណៈនៅពេល t = 3s។</p>
+        
+        <div class="solution-box">
+            <strong>ដំណោះស្រាយ៖</strong><br>
+            <strong>១. ល្បឿនមធ្យម ពី 0s ទៅ 4s៖</strong><br>
+            V<sub>m</sub> = (32 - 0) / (4 - 0) = <strong>8 m/s</strong><br><br>
+            
+            <strong>២. ល្បឿនខណៈនៅពេល t = 3s៖</strong><br>
+            <i>វ៉ិចទ័រល្បឿនខណៈស្មើនឹងមេគុណប្រាប់ទិសនៃបន្ទាត់ប៉ះត្រង់ចំណុចនោះ។</i><br>
+            V = (x<sub>N</sub> - x<sub>M</sub>) / (t<sub>N</sub> - t<sub>M</sub>)<br>
+            V = (18 - (-6)) / (3 - 1) = 24 / 2 = <strong>12 m/s</strong>
+        </div>
+    </div>
+
+</div>
+
+<!-- JavaScript សម្រាប់គូសក្រាបទាំង ៣ -->
+<script>
+    const commonOptions = {
+        responsive: true,
+        scales: {
+            x: { 
+                type: 'linear', 
+                position: 'bottom',
+                title: { display: true, text: 'រយៈពេល (s)', font: {size: 14, weight: 'bold'} }
+            },
+            y: { 
+                title: { display: true, text: 'ទីតាំង / ចម្ងាយចរ (m)', font: {size: 14, weight: 'bold'} }
+            }
+        },
+        plugins: {
+            legend: { labels: { font: { family: 'Kantumruy Pro' } } }
+        }
+    };
+
+    // ក្រាបទី ១
+    new Chart(document.getElementById('chart1'), {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'ចម្ងាយចររបស់រថយន្ត',
+                data: [{x: 0, y: 0}, {x: 4, y: 20}, {x: 6, y: 20}],
+                borderColor: 'blue',
+                backgroundColor: 'blue',
+                showLine: true,
+                borderWidth: 3,
+                pointRadius: 5
+            }]
+        },
+        options: commonOptions
+    });
+
+    // ក្រាបទី ២
+    new Chart(document.getElementById('chart2'), {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'ទីតាំងរបស់សិស្សជិះកង់',
+                data: [{x: 0, y: 10}, {x: 2, y: 40}, {x: 5, y: 10}],
+                borderColor: 'red',
+                backgroundColor: 'red',
+                showLine: true,
+                borderWidth: 3,
+                pointRadius: 5
+            }]
+        },
+        options: commonOptions
+    });
+
+    // ក្រាបទី ៣
+    new Chart(document.getElementById('chart3'), {
+        type: 'scatter',
+        data: {
+            datasets: [
+                {
+                    label: 'ខ្សែកោងទីតាំងវត្ថុ (x = 2t²)',
+                    data: [
+                        {x: 0, y: 0}, {x: 1, y: 2}, {x: 2, y: 8}, 
+                        {x: 3, y: 18}, {x: 4, y: 32}
+                    ],
+                    borderColor: 'green',
+                    backgroundColor: 'green',
+                    showLine: true,
+                    tension: 0.4, // ធ្វើឲ្យខ្សែកោងទន់
+                    borderWidth: 3,
+                    pointRadius: 5
+                },
+                {
+                    label: 'បន្ទាត់ប៉ះត្រង់ t=3s',
+                    data: [{x: 1, y: -6}, {x: 3, y: 18}, {x: 4, y: 30}],
+                    borderColor: 'orange',
+                    backgroundColor: 'orange',
+                    showLine: true,
+                    borderDash: [5, 5], // បន្ទាត់ដាច់ៗ
+                    borderWidth: 2,
+                    pointRadius: 4
+                }
+            ]
+        },
+        options: commonOptions
+    });
+</script>
+
+</body>
+</html>
